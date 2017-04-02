@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170402100829) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boards", force: :cascade do |t|
     t.string   "title"
     t.string   "editor"
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170402100829) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["board_id"], name: "index_comments_on_board_id"
+    t.index ["board_id"], name: "index_comments_on_board_id", using: :btree
   end
 
 end
