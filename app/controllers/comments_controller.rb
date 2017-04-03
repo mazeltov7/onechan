@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  http_basic_authenticate_with name: 'mazeltov7', password: 'maze', only: :destroy
+
   def create
     @board = Board.find(params[:board_id])
     @comment = Comment.new(params_comment)

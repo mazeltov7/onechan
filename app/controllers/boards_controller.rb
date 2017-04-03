@@ -1,6 +1,8 @@
 # thread's controller
 class BoardsController < ApplicationController
 
+  http_basic_authenticate_with name: 'mazeltov7', password: 'maze', only: :destroy
+
   def index
     @boards = Board.all
   end
