@@ -3,10 +3,10 @@
   <head>
     <title>1ch(わんちゃんねる)</title>
     <%= csrf_meta_tags %>
-
+    <%= display_meta_tags default_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= analytics_init if GoogleAnalytics.valid_tracker? %>
+    <%= analytics_init if Rails.env.production? %>
   </head>
 
   <body>
